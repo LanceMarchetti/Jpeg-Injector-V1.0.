@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jpeg-Injector V1.0</title>
+<link rel="icon" href="win95_logo.png" type="image/png">
+<style>
+body {
+    font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+    margin: 2rem;
+    background-color: #008080; /* Classic Windows 95 teal */
+    color: #000;
+    background-image: url('data:image/png;base64,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');
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.desktop-icon img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+    border: none;
+    background: transparent;
+}
+
+.desktop-icon span {
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.desktop-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.window {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 2px 2px 0 0 #000;
+    padding: 2px;
+    margin: 50px auto;
+    max-width: 800px;
+    position: relative;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 3px 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-bar-controls {
+    display: flex;
+}
+
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    border: 1px solid #fff;
+    background-color: #c0c0c0;
+    margin-left: 2px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.title-bar-text {
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px #000;
+}
+
+.window-body {
+    padding: 10px;
+    background-color: #c0c0c0;
+}
+
+#drop {
+    width: 240px;
+    height: 80px;
+    border: 2px inset #fff;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+img.preview-img {
+    max-height: 300px;
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #808080;
+    background-color: #fff;
+    padding: 1px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    margin-bottom: .9rem;
+    font-family: 'Fixedsys', monospace;
+    border: 2px inset #fff;
+    background-color: #fff;
+}
+
+button {
+    margin-right: .6rem;
+    font-family: 'MS Sans Serif', sans-serif;
+    color: #000;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 4px 10px;
+    min-width: 70px;
+    box-shadow: 1px 1px 0 0 #000;
+}
+
+button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: none;
+}
+
+/* Slider + badge --------------------------------------- */
+#sliderWrap {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+#sliderWrap input[type=range] {
+    width: 100%;
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: #c0c0c0;
+    border: 2px inset #fff;
+}
+
+#sliderWrap input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #c0c0c0;
+    border: 2px outset #fff;
+}
+
+#posBadge {
+    position: absolute;
+    top: -1.8rem;
+    left: 0;
+    background: #000080;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 0;
+    font-size: .75rem;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    pointer-events: none;
+    border: 1px solid #fff;
+}
+
+/* Manual input ----------------------------------------- */
+#posInput {
+    width: 100%;
+    padding: .3rem .4rem;
+    margin: -1.6rem 0 2.3rem;
+    box-sizing: border-box;
+    font-family: 'Fixedsys', monospace;
+    border: 2px inset #fff;
+}
+
+hr {
+    margin: 2.5rem 0 1.5rem;
+    border: 1px inset #fff;
+    border-width: 2px 0 0 0;
+}
+
+#info {
+    font-size: .9rem;
+    color: #000;
+    margin: .4rem 0 1rem;
+    font-family: 'MS Sans Serif', sans-serif;
+}
+
+.status-bar {
+    border-top: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    padding: 5px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Download button styles */
+.download-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'MS Sans Serif', sans-serif;
+    color: #000;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 6px 12px;
+    box-shadow: 1px 1px 0 0 #000;
+    cursor: pointer;
+}
+
+.download-btn:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: none;
+}
+
+.download-btn img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Windows 95 taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    margin-left: 2px;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    height: 22px;
+}
+
+.start-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.start-button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    border: none;
+    background: transparent;
+}
+
+.taskbar-time {
+    margin-left: auto;
+    margin-right: 10px;
+    border: 2px inset #fff;
+    padding: 2px 5px;
+    font-size: 11px;
+}
+
+/* Windows 95 font face */
+@font-face {
+    font-family: 'MS Sans Serif';
+    src: url('https://unpkg.com/95-font/dist/ms-sans-serif-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MS Sans Serif';
+    src: url('https://unpkg.com/95-font/dist/ms-sans-serif-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fixedsys';
+    src: url('https://unpkg.com/fixedsys-css/FSEX300.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
+</head>
+<body>
+
+<div class="desktop-icons">
+    <div class="desktop-icon" id="openApp">
+        <img src="images/win95_logo.png" alt="Jpeg Injector">
+        <span>Jpeg Injector V1.0</span>
+    </div>
+</div>
+
+<div class="window" id="appWindow">
+    <div class="title-bar">
+        <div class="title-bar-text">Jpeg-Injector V1.0</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize">_</button>
+            <button aria-label="Maximize">□</button>
+            <button aria-label="Close" id="closeButton">×</button>
+        </div>
+    </div>
+    <div class="window-body">
+        <h4>A Project In Development - Complex_Echo_5845</h4>
+
+        <div id="drop">
+            Drag & Drop JPEG (≤ 3 MB) <br>or Click to Browse…
+            <input id="chooser" type="file" accept="image/jpeg" hidden>
+        </div>
+
+        <img id="preview" class="preview-img" hidden alt="Original preview">
+
+        <textarea id="txt" placeholder="Type or paste text (≤ 3 000 000 chars)"></textarea>
+
+        <div id="info">(No file loaded)</div>
+
+        <div id="sliderWrap">
+            <input type="range" id="pos" min="0" max="0" value="0" disabled>
+            <span id="posBadge">0</span>
+        </div>
+
+        <input id="posInput" type="number" min="0" value="0" disabled
+               placeholder="Byte offset…" title="Exact byte position">
+
+        <button id="insert">Insert</button>
+        <form style="display: inline-block;">
+            <input type="submit" id="reset" value="Start Over" style="font-family: 'MS Sans Serif', sans-serif; color: black; background-color: #c0c0c0; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; padding: 4px 10px; min-width: 70px; box-shadow: 1px 1px 0 0 #000; margin-right: .6rem; cursor: pointer;">
+        </form>
+
+        <hr>
+
+        <div id="result-container">
+            <img id="result" class="preview-img" hidden alt="Modified preview">
+            <button id="download-button" style="display:none;" class="download-btn">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAnElEQVQokZWSsQ3CMBBE7xC/xAWiDYu4ZwMGYIbswBZeIEgUSOwQGrJBKOiR+Ct8ORLEk1zc3d/Z57NzzlnrmiQFu5ykaXDOGQAoG6C5eTnnLEmLJKy1xlorSdpaY4lYa1VE0/WoYBuZGLBGxM5bM6+HKY8/BZwG/fqx3GEK6GhQ8nkBPdMnJrkuIi5pD/TARaJ89v3Xfn8OWgD+AAzqKwcZXM/7AAAAAElFTkSuQmCC" style="width: 12px; height: 12px; margin-right: 5px;">
+                Download Modified Image
+            </button>
+        </div>
+    </div>
+    <div class="status-bar">
+        Ready
+    </div>
+</div>
+
+<div class="taskbar">
+    <button class="start-button" id="startButton">
+        <img src="../images/win95_logo.png" alt="Start">
+        <span>Start</span>
+    </button>
+    <div class="taskbar-time" id="taskbarTime">12:00 PM</div>
+</div>
+
+<script>
+/**
+ * Windows 95 Edition of Jpeg-Injector
+ * 
+ * CUSTOM SOUND INSTRUCTIONS:
+ * To replace the Start Over button sound with your custom WAV:
+ * 1. Find the line with "YOUR_BASE64_WAV_SOUND_HERE" in the Sound Effects section
+ * 2. Replace that placeholder with your base64-encoded WAV sound data
+ */
+(() => {
+/* ---------- DOM shortcuts ---------- */
+const drop     = document.getElementById('drop');
+const chooser  = document.getElementById('chooser');
+const preview  = document.getElementById('preview');
+const txt      = document.getElementById('txt');
+const pos      = document.getElementById('pos');
+const posInput = document.getElementById('posInput');
+const badge    = document.getElementById('posBadge');
+const info     = document.getElementById('info');
+const insertBt = document.getElementById('insert');
+const result   = document.getElementById('result');
+const downloadBtn = document.getElementById('download-button');
+const appWindow = document.getElementById('appWindow');
+const closeButton = document.getElementById('closeButton');
+const openApp = document.getElementById('openApp');
+const taskbarTime = document.getElementById('taskbarTime');
+
+/* ---------- Windows 95 UI functionality ---------- */
+// Window controls
+closeButton.addEventListener('click', () => {
+    appWindow.style.display = 'none';
+});
+
+openApp.addEventListener('click', () => {
+    appWindow.style.display = 'block';
+});
+
+// Make window draggable
+let isDragging = false;
+let offsetX, offsetY;
+
+document.querySelector('.title-bar').addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - appWindow.getBoundingClientRect().left;
+    offsetY = e.clientY - appWindow.getBoundingClientRect().top;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    appWindow.style.left = (e.clientX - offsetX) + 'px';
+    appWindow.style.top = (e.clientY - offsetY) + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+// Update clock
+function updateClock() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Convert 0 to 12
+    
+    taskbarTime.textContent = `${hours}:${minutes} ${ampm}`;
+}
+
+// Update clock every minute
+updateClock();
+setInterval(updateClock, 60000);
+
+/* ---------- State ---------- */
+let origBytes = null;          // Uint8Array of original JPEG
+let objURL    = null;          // object-URL for preview
+let fileName = "";             // Original filename
+
+/* ---------- Utilities ---------- */
+const revokeURL = () => { if (objURL){ URL.revokeObjectURL(objURL); objURL = null; } };
+
+function updateBadgeAndInput(){
+    const pct = (pos.value - pos.min) / (pos.max - pos.min || 1);
+    badge.style.left = `${pct * pos.getBoundingClientRect().width}px`;
+    badge.textContent = pos.value;
+    posInput.value = pos.value;
+}
+
+function clamp(val, lo, hi){
+    if (isNaN(val)) return lo;
+    return Math.min(Math.max(val, lo), hi);
+}
+
+/* ---------- File loading (shared by DnD & chooser) ---------- */
+function showWin95Error(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'win95-error';
+    errorDiv.style.position = 'fixed';
+    errorDiv.style.top = '50%';
+    errorDiv.style.left = '50%';
+    errorDiv.style.transform = 'translate(-50%, -50%)';
+    errorDiv.style.zIndex = '9999';
+    
+    // Create error dialog content
+    errorDiv.innerHTML = `
+        <div class="window" style="margin:0; min-width:300px;">
+            <div class="title-bar">
+                <div class="title-bar-text">Error</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" class="error-close">×</button>
+                </div>
+            </div>
+            <div class="window-body" style="display:flex; padding:15px;">
+                <img src="images/win95_error.png" style="width:40px; height:40px; margin-right:10px; border:none; background:transparent;">
+                <p style="margin:5px 0;">${message}</p>
+            </div>
+            <div style="text-align:center; padding:10px;">
+                <button class="error-ok">OK</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(errorDiv);
+    
+    // Add event listeners for buttons
+    errorDiv.querySelector('.error-close').addEventListener('click', () => {
+        document.body.removeChild(errorDiv);
+    });
+    
+    errorDiv.querySelector('.error-ok').addEventListener('click', () => {
+        document.body.removeChild(errorDiv);
+    });
+    
+    // Play Windows 95 error sound
+    const errorSound = new Audio('data:audio/mp3;base64,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');
+    errorSound.play();
+}
+
+function loadFile(file){
+    if (file.type !== 'image/jpeg'){ 
+        showWin95Error('Only JPEG files are supported.');
+        return; 
+    }
+    if (file.size > 3*1024*1024){
+        showWin95Error('File exceeds 3 MB limit.');
+        return; 
+    }
+
+    // Store the original filename
+    fileName = file.name;
+    
+    // Hide download button when new file is loaded
+    downloadBtn.style.display = 'none';
+
+    revokeURL();
+    objURL       = URL.createObjectURL(file);
+    preview.src  = objURL;
+    preview.hidden = false;
+    result.hidden  = true;
+
+    const reader = new FileReader();
+    reader.onload = e=>{
+        origBytes = new Uint8Array(e.target.result);
+
+        pos.max         = origBytes.length;     // allow EOF insert
+        pos.disabled    = false;
+        pos.value       = 0;
+
+        posInput.max    = origBytes.length;
+        posInput.disabled = false;
+        posInput.value  = 0;
+
+        updateBadgeAndInput();
+
+        info.textContent =
+          `File size: ${origBytes.length.toLocaleString()} bytes — slider 0…${origBytes.length}`;
+          
+        // Update status bar
+        document.querySelector('.status-bar').textContent = 'File loaded successfully';
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+/* ---------- Drag-and-drop ---------- */
+['dragenter','dragover'].forEach(evt =>
+    drop.addEventListener(evt, e=>{ e.preventDefault(); drop.style.borderColor='#000080'; })
+);
+['dragleave','drop'].forEach(evt =>
+    drop.addEventListener(evt, e=>{ e.preventDefault(); drop.style.borderColor='#fff'; })
+);
+drop.addEventListener('drop', e=>{
+    const f = e.dataTransfer.files[0];
+    if (f) loadFile(f);
+});
+
+/* ---------- Click-to-browse ---------- */
+drop.addEventListener('click', () => chooser.click());
+chooser.addEventListener('change', () => {
+    const f = chooser.files[0];
+    if (f) loadFile(f);
+});
+
+/* ---------- Slider ↔ input synchronisation ---------- */
+pos.addEventListener('input', updateBadgeAndInput);
+
+posInput.addEventListener('input', () => {
+    if (pos.disabled) return;
+    const v = clamp(Number(posInput.value), Number(pos.min), Number(pos.max));
+    pos.value = v;               // snaps slider
+    updateBadgeAndInput();
+});
+
+/* ---------- Insert logic ---------- */
+insertBt.addEventListener('click', ()=> {
+    if (!origBytes){ 
+        showWin95Error('Load a JPEG first before attempting to insert text.');
+        return; 
+    }
+    const text = txt.value;
+    if (!text){ 
+        showWin95Error('Text box is empty. Please enter some text to inject.');
+        return; 
+    }
+    if (text.length > 3_000_000){ 
+        showWin95Error('Text exceeds 3 000 000 character limit.');
+        return; 
+    }
+
+    const p = Number(pos.value);
+    const textBytes = new Uint8Array(text.length);
+    for (let i = 0; i < text.length; i++) textBytes[i] = text.charCodeAt(i) & 0xFF;
+
+    const out = new Uint8Array(origBytes.length + textBytes.length);
+    out.set(origBytes.subarray(0, p), 0);                 // pre-slice
+    out.set(textBytes, p);                                // insertion
+    out.set(origBytes.subarray(p), p + textBytes.length); // post-slice
+
+    const blob   = new Blob([out], {type:'image/jpeg'});
+    const modURL = URL.createObjectURL(blob);
+    result.src   = modURL;
+    result.hidden = false;
+    
+    // Show download button
+    downloadBtn.style.display = 'flex';
+    
+    // Setup download filename based on original filename
+    let modifiedFileName = fileName;
+    if (fileName) {
+        // Extract base name without extension
+        const dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex > 0) {
+            const baseName = fileName.substring(0, dotIndex);
+            modifiedFileName = baseName + '_modified.jpg';
+        } else {
+            modifiedFileName = fileName + '_modified.jpg';
+        }
+    } else {
+        modifiedFileName = 'modified_image.jpg';
+    }
+    
+    // Set up download button
+    downloadBtn.onclick = () => {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = modURL;
+        downloadLink.download = modifiedFileName;
+        
+        // Play Windows 95 sound when downloading
+        playSound(startOverSound);
+        
+        // Trigger download
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        
+        // Update status bar
+        document.querySelector('.status-bar').textContent = 'Image downloaded successfully';
+    };
+    
+    // Play success sound
+    playSound(insertSuccessSound);
+    
+    // Update status bar
+    document.querySelector('.status-bar').textContent = 'Text successfully injected';
+});
+
+/* ---------- Sound Effects ---------- */
+// Placeholder for your custom sound - replace this with your base64 WAV data
+const startOverSound = 'data:audio/mp3;base64,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';
+
+// Windows 95 success sound (tada.wav) - you can replace this with your custom sound too
+const insertSuccessSound = 'data:audio/mp3;base64,//sQxAAAQuQDSSCIYDCtiSaFh5hxBURqeAARRJAuCDhwYW9NoITnn7oneXSJ8WGGVsUek8IhGjEXk8et2Q8kfXXYFHEvYz6WfSAbCdALgQoRQ6+hnz9ftZJrJpW5aAABVqCTFo+JEHP/+xLECABF2GNdp7BHMKgJJgWGGRmnhrMj5syTxDSqWYlWY4z9eNdXnczkssBZhEpKDkRUTA3JMyx5DoM6DPOEsaIFo9H9Vc4rWAXkPb9olyePpNF0zUl1XdNf+SdZAAombAATuh/xVcX/+xDEBYBFuHM3J5hraKcHpqWHmGAZelKgYC3yIUoGOuQkC1ltmPId3UbiUaKlzsPWmZUMB/ObXAB0kbI+3ISq8xkkjaEgdcR2/UTIrwe30eEwrd3W49yw5ep62gBc0BDutWAckvMXGf/7EsQDAEUsVywsMMcYkQemtPMJHK21RYMmREwmSKyqldjMZZOSYO3V876YFWUtHUZ/i0axyU9bYKLKSMclvsxOmZcE1eI2dnjcK3YNDTbwgsLMFmggGTVXQv1uUgXAA5AZQKlDzTB2C//7EMQGAAUsPyJU9AAAw5MnQyEAAJqs59ub+JSC7xlAFhPVv84SFOwWHklMpFZW5HkR41jg/GgtZGFaPTjmAj24N1BPiNUcZlVrsM0FoH+IMEpigxx/+Fwgjw6LgIp/+aG6jSq2IDub//sSxAIABTRhe7iCgBCokq03ktAGZAeWSSUAAAAACWh4zwt1ygP13sYqstBffcccOi79/CLUPk9erLTakTalh6AAD6BcpikAo7zo9rW/4tTNutHojwHs///rKBt+0xf/H8PI1H4SICWg//sQxAIARRyVYaAk4XCYkm60BJQ2RqkAAB73OmcA8m5RXWWexb/g/B8Jx5j/RP7BEZ0LKjI/+VGCjjaIT8B2Voa5gsLVbvsaeLInMpP9AKb0cbHlmNKJDWZkmW9P+oIMFiIlsESiAAD/+xLEBABFkJVhoDFBsJwM7fBhGg4jbWNhNI8Dbl/c3KlGfW/QFkLkQJIeU+31RhZ9j7Tm/xHDgjFw8yZKB3v+c8+yqFG6TowgQhojP8CMQu/d60RHsghJ4DDnyLxA71jKmzausXXgB6D/+xDEBABFSJNthJyu8KQSq/SzKY5ppRpsaESgq4hQkpMihkkrO8GA4F1R19d74k5hb5f/0KCjBIkdqw0o/NJiVSTkkaMTagkaFxE+9egX4rD4+qMv+2T+1zWR/8jBIRnqGtil1LErAP/7EsQDgEVslWugJKGwng0utPAaTwAh3JqE59EexedILmKfQnhAOMc9f8XGBwaBwFTad0Ij/40MGONbH/qBJR++36wky1OJx6MVCixPySwq6xb4+W1cjTq0lRYKUO7seBMTVCXQxKQAAf/7EMQEAEVwlWelhNawoBKr9NMpHu3KTYiBViGZ6C5wxNmNPRPXf+bjrHw/S6Pu+Rtr1X/3YQNKwO0GTQshzd1nh5BKysKwKTdEwsyXNm38QAtFSqsb7f5v3/+xQMh4YWUSsiOshGQA//sSxAOARHyTZaAYQbCFkiqkBJQuAQ8H6QwirhCZltlAft0Uv9FcZ2azp8qTN/WQUMh+v+QU6clVwTWDxWDD4FOhKZlTwMER7OT9PeRH9v/0CDIVAAZSAwAz1/5rMLwPArbzammi/vX2//sQxAqARKSVPSZI6UCMkiw2kiAGDjRYaOnonr1vOHv//4gZCwciNlhTUf8P5uT50e4YgTp7PdunujeiMzizsdURm9V2/8MyFV437Z/C0A3YUL8ylBeT8ZI90uOQRwLJSXmiBSq/pEj/+xLED4AEqIE4GPaAAAAANIOAAASgkj/7pMfVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU';
+
+function playSound(soundData) {
+    const audio = new Audio(soundData);
+    audio.play();
+}
+
+/* ---------- Reset ---------- */
+// Get the form and reset button
+const resetForm = document.querySelector('form');
+const resetBtn = document.getElementById('reset');
+
+// Add event listener to play sound before form submission
+resetForm.addEventListener('submit', (e) => {
+    // Play the start over sound
+    playSound(startOverSound);
+    
+    // Small delay to allow the sound to start playing before page refreshes
+    // No need to prevent default as we want the form to submit and refresh
+});
+})();
+</script>
+</body>
+</html>
