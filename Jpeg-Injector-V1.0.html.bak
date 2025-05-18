@@ -373,7 +373,7 @@ hr {
 
 <div class="taskbar">
     <button class="start-button" id="startButton">
-        <img src="images/win95_logo.png" alt="Start">
+        <img src="../images/win95_logo.png" alt="Start">
         <span>Start</span>
     </button>
     <div class="taskbar-time" id="taskbarTime">12:00 PM</div>
