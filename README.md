@@ -1,5 +1,5 @@
 # Jpeg-Injector-V1.0 (2025 - in development)
-An unconventional Steganographic tool created by Complex_Echo_5845 for Jpeg text embedding. A nostalgic Windows 95-themed version sets the mood.
+An unconventional Steganographic tool created for Jpeg text embedding. A nostalgic Windows 95-themed version sets the mood.
  [Demo Available:](https://lancemarchetti.github.io/Jpeg-Injector-V1.0./Jpeg-Injector-V1.0.html)
 
 ## Features
